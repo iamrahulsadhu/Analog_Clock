@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #03a5fc;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: #a9fc03;
+    align-items: center;
+    border-radius: 200px;
+    box-shadow: 30px 30px 30px-10px rgba(0,0,0,0.15),
+    inset 15px 15px 10px rgba(255, 255,255,0.75),
+    -15px -15px 35px rgba(255, 255,255,0.55),
+    inset -1px -1px 10px rgba(0,0,0,0,2);
+}
+
+.container::before{
+    content: '';
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    background: #e91e63;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 0 0 0 1px #e91e63,
+    0 0 0 3px #fff,
+    0 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.container .index{
+    position: absolute;
+    inset: 30px;
+    border-radius: 50%;
+    background: #263833;
+    box-shadow: 9px 9px 9px 15px #152b4a66,
+    -6px -6px 100px -1px rgba(255, 255,255,1);
+}
+
+.container .index span{
+    position: absolute;
+    inset: 4px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.container .index span b{
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.container .index::before{
+    content: '';
+    position: absolute;
+    inset: 35px;
+    border-radius: 50%;
+    background: linear-gradient(#e91e63,blue,green);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+
+.container .index::after{
+    content: '';
+    position: absolute;
+    inset: 38px;
+    border-radius: 50%;
+    background: #090bad;
+}
+
+.container .index .circle{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.container .index .circle i{
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    background: #fff;
+    transform-origin: bottom;
+    transform: scaleY(0.55);
+}
+
+.container .index .circle#hr i{
+    transform: scaleY(0.3);
+    width: 4px;
+
+}
+
+.container .index .circle#mn i{
+    transform: scaleY(0.45);
+}
+
+.container .index .circle#sc i{
+    width: 2px;
+    transform: scaleY(0.55);
+    background: #e91e63;
+    box-shadow: 0 30px 0 #e91e63;
+
+}
